@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Evaluation</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <h2>Hi! I am Abakus! and I can evaluate your future, Answer the following questions and i will evaluate you choices.</h2>
-    <form action="pp01.php" method="post">
+<body class="bg-gray-100 p-8">
+    <h2 class="flex justify-center text-2xl mb-4">Hi! I am Abakus! and I can evaluate your future, Answer the following questions and I will evaluate your choices.</h2>
+
+    <form action="pp01.php" method="post" class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md" onsubmit="return validateForm()">
         <ol>
-            <li>
-                <label for="favorite_color">Which is your favorite color?</label><br>
-                <select name="favorite_color" id="favorite_color">
+            <li class="mb-4">
+                <label for="favorite_color" class="block font-semibold">Which is your favorite color?</label>
+                <select name="favorite_color" id="favorite_color" class="border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:ring focus:ring-blue-200" required>
                     <option value="red">Red</option>
                     <option value="black">Black</option>
                     <option value="blue">Blue</option>
@@ -17,13 +22,13 @@
                     <option value="yellow">Yellow</option>
                 </select>
             </li>
-            <li>
-                <label for="first_initial">Your first initial?</label><br>
-                <input type="text" name="first_initial" id="first_initial">
+            <li class="mb-4">
+                <label for="first_initial" class="block font-semibold">Your first initial?</label>
+                <input type="text" name="first_initial" id="first_initial" class="border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:ring focus:ring-blue-200" required>
             </li>
-            <li>
-                <label for="month_of_birth">Your month of birth?</label><br>
-                <select name="month_of_birth" id="month_of_birth">
+            <li class="mb-4">
+                <label for="month_of_birth" class="block font-semibold">Your month of birth?</label>
+                <select name="month_of_birth" id="month_of_birth" class="border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:ring focus:ring-blue-200" required>
                     <option value="January">January</option>
                     <option value="February">February</option>
                     <option value="March">March</option>
@@ -38,35 +43,60 @@
                     <option value="December">December</option>
                 </select>
             </li>
-            <li>
-                <label for="color_preference">Which color do you like more: Black or White?</label><br>
-                <input type="radio" name="color_preference" id="color_preference_black" value="black"> Black<br>
-                <input type="radio" name="color_preference" id="color_preference_white" value="white"> White<br>
+            <li class="mb-4">
+                <label for="color_preference" class="block font-semibold">Which color do you like more: Black or White?</label>
+                <div class="mt-2">
+                    <input type="radio" name="color_preference" id="color_preference_black" value="black" class="mr-1" required>
+                    <label for="color_preference_black">Black</label><br>
+                    <input type="radio" name="color_preference" id="color_preference_white" value="white" class="mr-1" required>
+                    <label for="color_preference_white">White</label><br>
+                </div>
             </li>
-            <li>
-                <label for="same_sex_person">Name of a person of the same sex as yours.</label><br>
-                <input type="text" name="same_sex_person" id="same_sex_person">
+            <li class="mb-4">
+                <label for="same_sex_person" class="block font-semibold">Name of a person of the same sex as yours.</label>
+                <input type="text" name="same_sex_person" id="same_sex_person" class="border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:ring focus:ring-blue-200" required>
             </li>
-            <li>
-                <label for="favorite_number">Your favorite number?</label><br>
-                <input type="text" name="favorite_number" id="favorite_number">
+            <li class="mb-4">
+                <label for="favorite_number" class="block font-semibold">Your favorite number?</label>
+                <input type="text" name="favorite_number" id="favorite_number" class="border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:ring focus:ring-blue-200" required>
             </li>
-            <li>
-                <label for="transport_preference">Do you like flying or driving?</label><br>
-                <input type="radio" name="transport_preference" id="transport_preference_flying" value="flying"> Flying<br>
-                <input type="radio" name="transport_preference" id="transport_preference_driving" value="driving"> Driving<br>
+            <li class="mb-4">
+                <label for="transport_preference" class="block font-semibold">Do you like flying or driving?</label>
+                <div class="mt-2">
+                    <input type="radio" name="transport_preference" id="transport_preference_flying" value="flying" class="mr-1" required>
+                    <label for="transport_preference_flying">Flying</label><br>
+                    <input type="radio" name="transport_preference" id="transport_preference_driving" value="driving" class="mr-1" required>
+                    <label for="transport_preference_driving">Driving</label><br>
+                </div>
             </li>
-            <li>
-                <label for="water_preference">Do you like a Lake or Ocean?</label><br>
-                <input type="radio" name="water_preference" id="water_preference_lake" value="lake"> Lake<br>
-                <input type="radio" name="water_preference" id="water_preference_ocean" value="ocean"> Ocean<br>
+            <li class="mb-4">
+                <label for="water_preference" class="block font-semibold">Do you like a Lake or Ocean?</label>
+                <div class="mt-2">
+                    <input type="radio" name="water_preference" id="water_preference_lake" value="lake" class="mr-1" required>
+                    <label for="water_preference_lake">Lake</label><br>
+                    <input type="radio" name="water_preference" id="water_preference_ocean" value="ocean" class="mr-1" required>
+                    <label for="water_preference_ocean">Ocean</label><br>
+                </div>
             </li>
-            <li>
-                <label for="wish">Write down a wish (a realistic one)?</label><br>
-                <textarea name="wish" id="wish" rows="4" cols="50"></textarea>
+            <li class="mb-4">
+                <label for="wish" class="block font-semibold">Write down a wish (a realistic one)?</label>
+                <textarea name="wish" id="wish" rows="4" cols="50" class="border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:ring focus:ring-blue-200" required></textarea>
             </li>
         </ol>
-        <button type="submit">Submit</button>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-200">Submit</button>
     </form>
+
+    <script>
+        function validateForm() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="radio"], select, textarea');
+            for (const input of inputs) {
+                if (input.required && input.value.trim() === '') {
+                    alert('Please fill out all required fields.');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
