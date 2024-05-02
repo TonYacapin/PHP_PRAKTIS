@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activity Evaluation</title>
+</head>
+<body>
+    <h2>Activity Evaluation</h2>
+    <form action="pp01.php" method="post">
+        <ol>
+            <li>
+                <label for="favorite_color">Which is your favorite color?</label><br>
+                <select name="favorite_color" id="favorite_color">
+                    <option value="red">Red</option>
+                    <option value="black">Black</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                </select>
+            </li>
+            <li>
+                <label for="first_initial">Your first initial?</label><br>
+                <input type="text" name="first_initial" id="first_initial">
+            </li>
+            <li>
+                <label for="month_of_birth">Your month of birth?</label><br>
+                <select name="month_of_birth" id="month_of_birth">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+            </li>
+            <li>
+                <label for="color_preference">Which color do you like more: Black or White?</label><br>
+                <input type="radio" name="color_preference" id="color_preference_black" value="black"> Black<br>
+                <input type="radio" name="color_preference" id="color_preference_white" value="white"> White<br>
+            </li>
+            <li>
+                <label for="same_sex_person">Name of a person of the same sex as yours.</label><br>
+                <input type="text" name="same_sex_person" id="same_sex_person">
+            </li>
+            <li>
+                <label for="favorite_number">Your favorite number?</label><br>
+                <input type="text" name="favorite_number" id="favorite_number">
+            </li>
+            <li>
+                <label for="transport_preference">Do you like flying or driving?</label><br>
+                <input type="radio" name="transport_preference" id="transport_preference_flying" value="flying"> Flying<br>
+                <input type="radio" name="transport_preference" id="transport_preference_driving" value="driving"> Driving<br>
+            </li>
+            <li>
+                <label for="water_preference">Do you like a Lake or Ocean?</label><br>
+                <input type="radio" name="water_preference" id="water_preference_lake" value="lake"> Lake<br>
+                <input type="radio" name="water_preference" id="water_preference_ocean" value="ocean"> Ocean<br>
+            </li>
+            <li>
+                <label for="wish">Write down a wish (a realistic one)?</label><br>
+                <textarea name="wish" id="wish" rows="4" cols="50"></textarea>
+            </li>
+        </ol>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
