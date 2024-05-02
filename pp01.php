@@ -51,7 +51,7 @@
             case 'I':
             case 'J':
             case 'K':
-                echo "You have a lot of love and friendships in your life.";
+                echo "You have a lot of love and friendships in your life. ";
                 break;
             case 'L':
             case 'M':
